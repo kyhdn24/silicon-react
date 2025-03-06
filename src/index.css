@@ -779,10 +779,12 @@ form {
             grid-template-areas: "headline" "accordion" "contactoptions";
         }
 
-        @media (width >= 992px) {
-            gap: 5rem;
+        @media (width >= 1400px) {
+            gap: 2rem;
+            column-gap: 4rem;
             grid-template-columns: 2fr 3fr;
-            grid-template-areas: "headline accordion" "contactoptions accordion";
+            grid-template-rows: auto auto 1fr;
+            grid-template-areas: "headline accordion" "contactoptions accordion" "na accordion";
         }
     }
 
@@ -813,7 +815,7 @@ form {
 
 #subscribe {
 
-    padding: 5rem 0 0rem;
+    padding: 0rem 0 0rem;
 
     .container {
         background-color: var(--section-background);
