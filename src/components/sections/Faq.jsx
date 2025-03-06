@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Accordion from '../elements/Accordion'
+import ContactOption from '../elements/ContactOption'
 
 const Faq = () => {
   return (
@@ -13,16 +14,8 @@ const Faq = () => {
             </div>
 
             <div className="contact-options">
-                <div className="contact-option">
-                    <i class="fa-solid fa-phone"></i>
-                    <p>Still have questions?</p>
-                    <Link to="/contact">Contact us</Link>
-                </div>
-                <div className="contact-option">
-                    <i class="bi bi-chat-dots-fill"></i>
-                    <p>Don't like phone calls?</p>
-                    <Link to="/contact">Contact us</Link>
-                </div>
+                <ContactOption icon="fa-solid fa-phone" text="Still have questions?" uri="/contact" linkText="Contact us" color="purple" />
+                <ContactOption icon="bi bi-chat-dots-fill" text="Don't like phone calls?" uri="/contact" linkText="Contact us" color="green" />
             </div>
 
             <Accordion />
