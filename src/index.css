@@ -14,9 +14,7 @@
     --gray-600-color: rgba(207, 209, 220, 0.10);
     --dark-color: #0B0F19;
     --white-color: #ffffff;
-}
 
-[data-theme="light"] {
     --text: var(--gray-400-color);
     --text-muted: var(--gray-300-color);
     --text-headline: var(--dark-color);
@@ -392,6 +390,11 @@ form {
     }
 }
 
+.accordion {
+
+}
+
+
 /* sections */
 #header {
     padding: 1rem 0;
@@ -729,6 +732,10 @@ form {
         }
             
     }
+}
+
+#faq {
+
 }
 
 #subscribe {

@@ -6,6 +6,7 @@ import Subscribe from '../components/sections/Subscribe'
 import HowDoesItWork from '../components/sections/HowDoesItWork'
 import MoneyTransfer from '../components/sections/MoneyTransfer'
 import ReceivePayment from '../components/sections/ReceivePayment'
+import Faq from '../components/sections/Faq'
 
 
 const HomePage = () => {
@@ -18,6 +19,7 @@ const HomePage = () => {
       <MoneyTransfer />
       <ReceivePayment />
       <Testimonials />
+      <Faq />
       <Subscribe />
     </>
   )
