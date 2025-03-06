@@ -13,6 +13,7 @@
     --gray-400-color: #565973;
     --gray-500-color: #464647;
     --gray-600-color: rgba(207, 209, 220, 0.10);
+    --gray-700-color: rgba(255, 255, 255, 0.4); 
     --dark-color: #0B0F19;
     --white-color: #ffffff;
 
@@ -59,7 +60,14 @@
 
     --li-icon: var(--purple-100-color);
 
-    --chevron-background: var(--gray-100-color);
+    --accordionitem-headline: var(--text);
+    --accordionitem-text: var(--text);
+    --accordionitem-background: var(--white-color);
+    --accordionitem-chevron: var(--gray-100-color);
+    --accordionitem-chevron-active: var(--purple-100-color);
+
+    --accordionitem-chevron-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='0B0F19' class='bi bi-chevron-down' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+    --accordionitem-chevron-icon-active: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-chevron-down' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
 }
 
 [data-theme="dark"] {
@@ -106,7 +114,15 @@
 
     --li-icon: var(--purple-100-color);
 
-    --chevron-background: var(--gray-600-color);
+    --accordionitem-headline: var(--text);
+    --accordionitem-text: var(--text-muted);
+    --accordionitem-background: var(--gray-600-color);
+    --accordionitem-chevron: var(--gray-600-color);
+    --accordionitem-chevron-active: var(--purple-100-color);
+
+    --accordionitem-chevron-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-chevron-down' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+    --accordionitem-chevron-icon-active: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-chevron-down' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+
 }
 
 html, body {
@@ -432,53 +448,54 @@ form {
     .accordion-item {
 
         border: none;
-        border-radius: 8px;
+        border-radius: 12px;
         box-shadow: 0 7px 7px 2px rgba(139, 139, 139, 0.1);
         margin-bottom: 1.5rem;
+        color: var(--accordionitem-text);
+        background-color: var(--accordionitem-background);
 
         .accordion-header {
+            color: var(--accordionitem-headline);
 
 
             .accordion-button {
                 font-weight: 600;
+                border: none;
+                border-radius: 12px;
+                background-color: transparent;
+                color: var(--accordionitem-headline);
 
                 &::after {
-
                     width: 36px;
                     height: 36px;
-                    /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-chevron-down' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E"); */
-                    background-color: var(--chevron-background);
+                    background-color: var(--accordionitem-chevron);
+                    background-image: var(--accordionitem-chevron-icon);
                     border-radius: 50%;
                     background-position: 50%;
                     padding: 1.5rem;
+                }
 
+                &:not(.collapsed) {
+                    background-color: transparent;
+                    box-shadow: none;
+
+                    &::after {
+                        background-color: var(--accordionitem-chevron-active);
+                        background-image: var(--accordionitem-chevron-icon-active);
+                    }
+
+                }
+
+                &:focus {
+                    box-shadow: none;
+                    outline: none;
                 }
             }
 
         }
-
-        .accordion-body {
-
-        }
-
-
-        .accordion-collapse {
-
-        }
-
-        .collapsed {
-
-        }
-
-        .collapse {
-
-        }
-
-
-
     }
-
 }
+
 
 /* sections */
 #header {
