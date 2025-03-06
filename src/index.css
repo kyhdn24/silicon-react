@@ -767,7 +767,48 @@ form {
 }
 
 #faq {
+    padding: 5rem 0; 
 
+    .container {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: 1fr;
+        grid-template-areas: "headline" "accordion";
+
+        @media (width >= 768px) {
+            grid-template-areas: "headline" "accordion" "contactoptions";
+        }
+
+        @media (width >= 992px) {
+            gap: 5rem;
+            grid-template-columns: 2fr 3fr;
+            grid-template-areas: "headline accordion" "contactoptions accordion";
+        }
+    }
+
+    .headline {
+        grid-area: headline;
+        text-align: center;
+
+        @media (width >= 992px) {
+            text-align: left;
+        }
+    }
+
+    .contact-options {
+        grid-area: contactoptions;
+        display: none;
+
+        @media (width >= 768px) {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    .accordion {
+        grid-area: accordion;
+    }
 }
 
 #subscribe {
