@@ -3,6 +3,7 @@
 * { box-sizing: border-box; }
 
 :root {
+    --green-color: #22C55E;
     --gold-color: gold;
     --purple-100-color: #6366F1;
     --purple-200-color: #5e4ab8;
@@ -390,10 +391,41 @@ form {
     }
 }
 
+.contact-option {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: grid;
+    gap: 1rem;
+
+    i {
+        font-size: 1.5em;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    a {
+        font-weight: 600;
+    }
+} 
+
+.contact-option-purple {
+    i, a {
+        color: var(--purple-100-color);
+    }
+}
+
+.contact-option-green {
+    i, a {
+        color: var(--green-color);
+    }
+}
+
 .accordion {
 
 }
-
 
 /* sections */
 #header {
